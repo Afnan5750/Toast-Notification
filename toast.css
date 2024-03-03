@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(/Images/bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    width: 457px;
+    background: white;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
+    color: #333;
+    padding: 100px;
+    border-radius: 10px;
+    margin: 126px 130px;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.container h1 {
+    position: absolute;
+    left: 12.5%;
+    top: 28%;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border-bottom: 4px solid black;
+}
+
+.buttons {
+    position: absolute;
+    margin: 50px;
+    top: 30%;
+    left: 8%;
+}
+
+.buttons button {
+    background-color: #333;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    margin: 5px;
+}
+
+.buttons button:hover{
+    background-color: #221f1f;
+}
+
+#toastBox {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.toast {
+    width: 400px;
+    height: 80px;
+    background: white;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translateX(100%);
+    animation: moveleft 0.5s linear forwards;
+}
+
+@keyframes moveleft {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.toast i {
+    margin: 0 20px;
+    font-size: 35px;
+    color: green;
+}
+
+.toast.error i {
+    color: red;
+}
+
+.toast.invalid i {
+    color: orange;
+}
+
+.toast::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-color: green;
+    animation: anim 5s linear forwards;
+}
+
+@keyframes anim {
+    100% {
+        width: 0;
+    }
+}
+
+.toast.error::after {
+    background: red;
+}
+
+.toast.invalid::after {
+    background: orange;
+}
